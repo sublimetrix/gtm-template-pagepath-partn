@@ -1,7 +1,9 @@
 # Page Path - Part N
 
 ## Description
+
 A Google Tag Manager variable template that return
+
 	- the page path part by index
 	- always the last part
 	- the page path length (interger)
@@ -9,7 +11,9 @@ A Google Tag Manager variable template that return
 
 
 ## Example
+
 When path is /shop/toys/cars/red-car.html
+
 |Page Path - Part N|Return value|
 | ---- | ---- |
 |Page Path - Part 1|shop|
@@ -18,6 +22,7 @@ When path is /shop/toys/cars/red-car.html
 |Page Path - Length|4|
 
 When path is /
+
 |Page Path - Part N|Return value|
 | ---- | ---- |
 |Page Path - Part 1|undefined|
