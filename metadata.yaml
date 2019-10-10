@@ -2,4 +2,4 @@ homepage: "http://sublimetrix.com"
 versions:
   # Last version
   - sha: 1ae35bdacafa31321e54bc00c58ce20450d4a7be
-  changesNotes: First release
+  changesNotes: Initial Version
