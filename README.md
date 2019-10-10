@@ -9,7 +9,7 @@ A Google Tag Manager variable template that return
 
 
 ## Example
-If the path is /shop/toys/cars/red-car.html
+When path is /shop/toys/cars/red-car.html
 |Page Path - Part N|Return value|
 | ---- | ---- |
 |Page Path - Part 1|shop|
@@ -17,9 +17,11 @@ If the path is /shop/toys/cars/red-car.html
 |Page Path - Last Part|red-car.html |
 |Page Path - Length|4|
 
-If the path is /
+When path is /
 |Page Path - Part N|Return value|
 | ---- | ---- |
 |Page Path - Part 1|undefined|
 |Page Path - Last Part|undefined|
 |Page Path - Length|0|
+
+
