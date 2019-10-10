@@ -156,7 +156,7 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 const log = require('logToConsole');
 const query = require('queryPermission');
 const getUrl = require('getUrl');
-const path = '/a/b/c/d/e/f/g/h.html'; //getUrl('path');
+const path = getUrl('path');
 
 const parts = path.split('/');
 const lastIndex = parts.length-1;
@@ -180,7 +180,8 @@ if ('length' == data.path_part ) {
       index = data.path_part;
       break;
   }
-  return undefined != index ? parts[index] : undefined;
+  log( 'part =', parts[index] ? parts[index] : undefined );
+  return '' != parts[index] ? parts[index] : undefined;
 }
 
 
