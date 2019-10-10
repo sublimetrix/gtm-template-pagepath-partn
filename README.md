@@ -7,7 +7,7 @@ A Google Tag Manager variable template that return:
 	* the page path length (interger)
 
 ## Example
-If the path is "/shop/toys/cars/red-car.html":
+If the path is "/shop/toys/cars/red-car.html"
 | Page Path - Part N    | Return value |
 |-----------------------|--------------|
 | Page Path - Part 1    | shop         |
@@ -15,7 +15,7 @@ If the path is "/shop/toys/cars/red-car.html":
 | Page Path - Last Part | red-car.html |
 | Page Path - Length    | 4            |
 
-If the path is "/":
+If the path is "/"
 | Page Path - Part N    | Return value |
 |-----------------------|--------------|
 | Page Path - Part 1    | undefined    |
