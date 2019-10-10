@@ -2,9 +2,9 @@
 
 ## Description
 A Google Tag Manager variable template that return
-	*the page path part by index
-	*always the last part
-	*the page path length (interger)
+	- the page path part by index
+	- always the last part
+	- the page path length (interger)
 
 
 
