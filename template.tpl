@@ -26,6 +26,23 @@ ___TEMPLATE_PARAMETERS___
 
 [
   {
+    "displayName": "Documentation : https://github.com/sublimetrix/gtm-template-pagepath-partn",
+    "name": "documentation",
+    "type": "LABEL"
+  },
+  {
+    "valueValidators": [
+      {
+        "type": "NON_EMPTY"
+      }
+    ],
+    "displayName": "Source",
+    "defaultValue": "{{Page Path}}",
+    "simpleValueType": true,
+    "name": "path_source",
+    "type": "TEXT"
+  },
+  {
     "macrosInSelect": false,
     "alwaysInSummary": true,
     "selectItems": [
@@ -62,7 +79,7 @@ ___TEMPLATE_PARAMETERS___
         "value": "length"
       }
     ],
-    "displayName": "Part of the page path you want to return.",
+    "displayName": "Part of the path to return",
     "defaultValue": 1,
     "simpleValueType": true,
     "name": "path_part",
@@ -111,41 +128,6 @@ ___WEB_PERMISSIONS___
       ]
     },
     "isRequired": true
-  },
-  {
-    "instance": {
-      "key": {
-        "publicId": "get_url",
-        "versionId": "1"
-      },
-      "param": [
-        {
-          "key": "urlParts",
-          "value": {
-            "type": 1,
-            "string": "specific"
-          }
-        },
-        {
-          "key": "path",
-          "value": {
-            "type": 8,
-            "boolean": true
-          }
-        },
-        {
-          "key": "queriesAllowed",
-          "value": {
-            "type": 1,
-            "string": "any"
-          }
-        }
-      ]
-    },
-    "clientAnnotations": {
-      "isEditedByUser": true
-    },
-    "isRequired": true
   }
 ]
 
@@ -154,16 +136,27 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
 // Enter your template code here.
 const log = require('logToConsole');
-const query = require('queryPermission');
-const getUrl = require('getUrl');
-const path = getUrl('path');
+let path = data.path_source;
 
+// resolve
+if (path.match('^http')) {
+  path = path.split('/');
+  path.shift();
+  path.shift();
+  path.shift();
+  path = path.join('/');
+}
+if (0 <  path.indexOf('#')) {path = path.split('#')[0];}
+if (0 <  path.indexOf('?')) {path = path.split('?')[0];}
+if (0 == path.indexOf('#')) {path = path.replace('#', '');}
+if (0 <  path.indexOf('/')) {path = '/'+path;}
+log('path_resolved = ', path);
+
+
+// script
 const parts = path.split('/');
 const lastIndex = parts.length-1;
 const pathLength = '' == parts[1] ? 0 : lastIndex;
-
-log('parts =', parts);
-log('data =', data);
 
 if ('length' == data.path_part ) {
   return pathLength;
@@ -180,7 +173,7 @@ if ('length' == data.path_part ) {
       index = data.path_part;
       break;
   }
-  log( 'part =', parts[index] ? parts[index] : undefined );
+  log( 'result =', parts[index] ? parts[index] : undefined );
   return '' != parts[index] ? parts[index] : undefined;
 }
 
@@ -192,3 +185,8 @@ Version: 1.0.0
 Author: Sublimetrix
 Date: 2019.10.10
 /*******************/
+
+
+Change Log:
+1.0.0: Initial Version
+1.1.0: Add custom source path (Click URL, ...)
