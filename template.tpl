@@ -18,7 +18,9 @@ ___INFO___
   "containerContexts": [
     "WEB"
   ],
-  "brand": {}
+  "brand": {
+    "displayName": "Custom Template"
+  }
 }
 
 
@@ -127,6 +129,9 @@ ___WEB_PERMISSIONS___
         }
       ]
     },
+    "clientAnnotations": {
+      "isEditedByUser": true
+    },
     "isRequired": true
   }
 ]
@@ -139,6 +144,7 @@ const log = require('logToConsole');
 let path = data.path_source;
 
 // resolve
+if ('undefined' == typeof path) return path;
 if (path.match('^http')) {
   path = path.split('/');
   path.shift();
@@ -149,7 +155,8 @@ if (path.match('^http')) {
 if (0 <  path.indexOf('#')) {path = path.split('#')[0];}
 if (0 <  path.indexOf('?')) {path = path.split('?')[0];}
 if (0 == path.indexOf('#')) {path = path.replace('#', '');}
-if (0 <  path.indexOf('/')) {path = '/'+path;}
+if (path.match('/$')) {path = path.slice(0, path.length-1);}
+if (!path.match('^/')) {path = path = '/'+path;}
 log('path_resolved = ', path);
 
 
@@ -173,8 +180,8 @@ if ('length' == data.path_part ) {
       index = data.path_part;
       break;
   }
-  log( 'result =', parts[index] ? parts[index] : undefined );
-  return '' != parts[index] ? parts[index] : undefined;
+  log( 'result =', parts[index] ? parts[index] : '' );
+  return '' != parts[index] ? parts[index] : '';
 }
 
 
@@ -190,3 +197,4 @@ Date: 2019.10.10
 Change Log:
 1.0.0: Initial Version
 1.1.0: Add custom source path (Click URL, ...)
+1.1.1: Fix path resolve
