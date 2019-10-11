@@ -7,7 +7,7 @@ The Google Tag Manager variable template will return
 
 	* the page path part by index
 	* always the last part
-	* the page path length (interger)
+	* the page path length (integer)
 
 
 
