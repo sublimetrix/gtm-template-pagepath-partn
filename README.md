@@ -2,7 +2,8 @@
 
 ## Description
 
-A Google Tag Manager variable template that return
+{{Page Path}} used by default, but you can use a custom path source as {{Click URL}}, {{New History Fragment}}, {{Form URL}}, etc.
+The Google Tag Manager variable template will return
 
 	* the page path part by index
 	* always the last part
