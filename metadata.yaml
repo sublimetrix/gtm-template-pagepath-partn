@@ -1,5 +1,9 @@
 homepage: "http://sublimetrix.com"
 versions:
   # Last version
+  - sha: 91bb414a3a685bd8707660d8677bd7e268a949e4
+    changesNotes: Version 1.1.0 - Custom path source
+
+  # Older versions
   - sha: 5221146af2264f94a59ee0f4fa26602874a151b0
-    changesNotes: Initial Version
+  changesNotes: Initial Version
