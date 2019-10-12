@@ -26,8 +26,8 @@ When path is /
 
 |Page Path - Part N|Return value|
 | ---- | ---- |
-|Page Path - Part 1|undefined|
-|Page Path - Last Part|undefined|
+|Page Path - Part 1||
+|Page Path - Last Part||
 |Page Path - Length|0|
 
 
