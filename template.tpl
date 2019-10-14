@@ -77,7 +77,7 @@ ___TEMPLATE_PARAMETERS___
         "value": "last"
       },
       {
-        "displayValue": "Return path length only (integer)",
+        "displayValue": "Path depth length (integer)",
         "value": "length"
       }
     ],
@@ -108,11 +108,18 @@ ___TEMPLATE_PARAMETERS___
     ]
   },
   {
-    "type": "CHECKBOX",
+    "alwaysInSummary": true,
+    "simpleValueType": true,
     "name": "option_extension",
     "checkboxText": "Remove extension (.html, .php, .pdf, etc.)",
-    "simpleValueType": true,
-    "alwaysInSummary": true
+    "type": "CHECKBOX",
+    "enablingConditions": [
+      {
+        "paramName": "path_part",
+        "paramValue": "length",
+        "type": "NOT_EQUALS"
+      }
+    ]
   }
 ]
 
@@ -187,7 +194,7 @@ if ('length' == data.path_part ) {
   let result = parts[index];
   if (true == optExt && 'undefined' != typeof result) {
     const match = result.match('^([^.]+)');
-    if ('undefined' != typeof match) {
+    if (match) {
       result = 'undefined' != typeof match[1] ? match[1] : result;
     }
   }
@@ -210,3 +217,4 @@ Change Log:
 1.1.1: Fix path resolve
 1.1.2: Remove log requirement
 1.2.0: Remove extension option
+1.2.1: Fix
