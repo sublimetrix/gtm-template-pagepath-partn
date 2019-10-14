@@ -1,10 +1,12 @@
 homepage: "http://sublimetrix.com"
 versions:
   # Last version
-  - sha: 306bc8a2d577ab1fec457236923388d9279072f9
-    changesNotes: 1.2.0 version with remove extension option
+  - sha: df74f379e3c3815aefca8a63fc772e48bab94418
+    changesNotes: Fix
 
   # Older versions
+  - sha: 306bc8a2d577ab1fec457236923388d9279072f9
+    changesNotes: 1.2.0 version with remove extension option
   - sha: e2aa48dea1aac5de6745957089e4fc54865ed3ba
     changesNotes: Fix
   - sha: e43f62237599875ce42265e0eba67590994781f2
