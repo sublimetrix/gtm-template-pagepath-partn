@@ -9,7 +9,7 @@ The Google Tag Manager variable template will return
 	* always the last part
 	* the page path length (integer)
 	
-NEW: The variable can now optionaly strip the extension (.html, .php, etc.)
+NEW: The variable can now optionaly strip the extension (.html, .jpg, .mp4, .php, etc.)
 
 
 ## Example
