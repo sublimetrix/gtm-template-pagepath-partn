@@ -9,8 +9,15 @@ The Google Tag Manager variable template will return
 	* always the last part
 	* the page path length (integer)
 	
-NEW: The variable can now optionaly strip the extension (.html, .jpg, .mp4, .php, etc.)
+The variable can now optionaly strip the extension (.html, .jpg, .mp4, .php, etc.)
 
+## How to install
+1. Open a Google Tag Manager container and go to the **Templates** menu.
+2. In the **Variables Templates** section, click on **Search Gallery** button.
+3. In the opened side panel, click on the **Search Icon** then type *"**sublimetrix**"*
+4. Select the variable you want then click **Add to workspace** and publish your workspace.
+
+*Do not forget to visit the **Templates** section sometimes to update gallery templates if a rounded blue arrow is visible.*
 
 ## Example
 
